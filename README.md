@@ -27,13 +27,13 @@ Or add a dependency:
 ### Maven
 ```xml
 <dependency>
-  <groupId>com.github.bishnusubedi</groupId>
-  <artifactId>date-converter</artifactId>
-  <version>1.0.0</version>
+  <groupId>com.github.bishnu-subedi</groupId>
+  <artifactId>BS-date-converter</artifactId>
+  <version>1.0.1</version>
 </dependency>
 ```
 ### Gradle
-```compile 'com.github.bishnusubedi:date-converter:1.0.0'```
+```compile 'com.github.bishnu-subedi:date-converter:1.0.1'```
 
 or find your dependency here
 [``maven central``](https://search.maven.org/#artifactdetails%7Ccom.github.bishnu-subedi%7CBS-date-converter%7C1.0.0%7Cjar)
