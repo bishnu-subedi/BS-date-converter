@@ -11,7 +11,7 @@
 
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Date converter is a java library that converts the date in A.D. to B.S. and vice versa</description>
-    <url>https://github.com/bishnu-subedi/date-converter</url>
+    <url>https://github.com/bishnu-subedi/BS-date-converter</url>
 
     <licenses>
         <license>
@@ -30,9 +30,9 @@
     </developers>
 
     <scm>
-        <connection>scm:git:git://github.com/bishnu-subedi/date-converter.git</connection>
-        <developerConnection>scm:git:git://github.com/bishnu-subedi/date-converter.git</developerConnection>
-        <url>https://github.com/bishnu-subedi/date-converter/tree/master</url>
+        <connection>scm:git:git://github.com/bishnu-subedi/BS-date-converter.git</connection>
+        <developerConnection>scm:git:git://github.com/bishnu-subedi/BS-date-converter.git</developerConnection>
+        <url>https://github.com/bishnu-subedi/BS-date-converter/tree/main</url>
     </scm>
 
 
