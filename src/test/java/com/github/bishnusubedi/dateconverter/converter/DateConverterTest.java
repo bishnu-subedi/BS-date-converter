@@ -9,8 +9,10 @@ import org.junit.runner.RunWith;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
@@ -22,56 +24,126 @@ import static org.junit.Assert.assertEquals;
 public class DateConverterTest {
 
   private static Object[] getParams() {
-    Object[] objects = new Object[15];
+    List<Object[]> testCases = new ArrayList<>();
 
     Calendar calendar = Calendar.getInstance();
 
     calendar.set(1998, Calendar.APRIL, 14);
-    objects[0] = new Object[] { calendar.getTime(), new DateBS(2055, CalendarBS.BAISAKH, 1) };
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2055, CalendarBS.BAISAKH, 1) });
 
     calendar.set(2007, Calendar.APRIL, 10);
-    objects[1] = new Object[] { calendar.getTime(), new DateBS(2063, CalendarBS.CHAITRA, 27) };
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2063, CalendarBS.CHAITRA, 27) });
 
     calendar.set(2003, Calendar.JUNE, 13);
-    objects[2] = new Object[] { calendar.getTime(), new DateBS(2060, CalendarBS.JESTHA, 30) };
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2060, CalendarBS.JESTHA, 30) });
 
     calendar.set(2000, Calendar.NOVEMBER, 29);
-    objects[3] = new Object[] { calendar.getTime(), new DateBS(2057, CalendarBS.MANGSHIR, 14) };
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2057, CalendarBS.MANGSHIR, 14) });
 
     calendar.set(2005, Calendar.MAY, 30);
-    objects[4] = new Object[] { calendar.getTime(), new DateBS(2062, CalendarBS.JESTHA, 17) };
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2062, CalendarBS.JESTHA, 17) });
+
 
     calendar.set(2016, Calendar.APRIL, 16);
-    objects[5] = new Object[] { calendar.getTime(), new DateBS(2073, CalendarBS.BAISAKH, 4) };
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2073, CalendarBS.BAISAKH, 4) });
 
     calendar.set(2000, Calendar.FEBRUARY, 9);
-    objects[6] = new Object[] { calendar.getTime(), new DateBS(2056, CalendarBS.MAGH, 26) };
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2056, CalendarBS.MAGH, 26) });
 
     calendar.set(1998, Calendar.APRIL, 16);
-    objects[7] = new Object[] { calendar.getTime(), new DateBS(2055, CalendarBS.BAISAKH, 3) };
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2055, CalendarBS.BAISAKH, 3) });
 
     calendar.set(1998, Calendar.APRIL, 15);
-    objects[8] = new Object[] { calendar.getTime(), new DateBS(2055, CalendarBS.BAISAKH, 2) };
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2055, CalendarBS.BAISAKH, 2) });
 
     calendar.set(1968, Calendar.JULY, 26);
-    objects[9] = new Object[] { calendar.getTime(), new DateBS(2025, CalendarBS.SHRAWAN, 11) };
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2025, CalendarBS.SHRAWAN, 11) });
 
     calendar.set(1953, Calendar.APRIL, 23);
-    objects[10] = new Object[] { calendar.getTime(), new DateBS(2010, CalendarBS.BAISAKH, 11) };
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2010, CalendarBS.BAISAKH, 11) });
 
     calendar.set(2001, Calendar.DECEMBER, 18);
-    objects[11] = new Object[] { calendar.getTime(), new DateBS(2058, CalendarBS.POUSH, 3) };
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2058, CalendarBS.POUSH, 3) });
 
     calendar.set(2023, Calendar.NOVEMBER, 15);
-    objects[12] = new Object[] { calendar.getTime(), new DateBS(2080, CalendarBS.KARTIK, 29) };
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2080, CalendarBS.KARTIK, 29) });
 
-    calendar.set(2034, Calendar.APRIL, 11);
-    objects[13] = new Object[] { calendar.getTime(), new DateBS(2090, CalendarBS.CHAITRA, 28) };
+    calendar.set(2025, Calendar.APRIL, 14);
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2082, CalendarBS.BAISAKH, 1) });
+
+    calendar.set(2025, Calendar.MAY, 14);
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2082, CalendarBS.BAISAKH, 31) });
+
+    calendar.set(2025, Calendar.MAY, 15);
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2082, CalendarBS.JESTHA, 1) });
+
+    calendar.set(2025, Calendar.JUNE, 14);
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2082, CalendarBS.JESTHA, 31) });
+
+    calendar.set(2025, Calendar.JUNE, 15);
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2082, CalendarBS.ASAR, 1) });
+
+    calendar.set(2025, Calendar.JULY, 16);
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2082, CalendarBS.ASAR, 32) });
+
+    calendar.set(2025, Calendar.JULY, 17);
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2082, CalendarBS.SHRAWAN, 1) });
+
+    calendar.set(2025, Calendar.AUGUST, 16);
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2082, CalendarBS.SHRAWAN, 31) });
+
+    calendar.set(2025, Calendar.AUGUST, 17);
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2082, CalendarBS.BHADRA, 1) });
+
+    calendar.set(2025, Calendar.SEPTEMBER, 16);
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2082, CalendarBS.BHADRA, 31) });
+
+    calendar.set(2025, Calendar.SEPTEMBER, 17);
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2082, CalendarBS.ASOJ, 1) });
+
+    calendar.set(2025, Calendar.OCTOBER, 17);
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2082, CalendarBS.ASOJ, 31) });
+
+    calendar.set(2025, Calendar.OCTOBER, 18);
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2082, CalendarBS.KARTIK, 1) });
+
+    calendar.set(2025, Calendar.NOVEMBER, 16);
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2082, CalendarBS.KARTIK, 30) });
+
+    calendar.set(2025, Calendar.NOVEMBER, 17);
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2082, CalendarBS.MANGSHIR, 1) });
+
+    calendar.set(2025, Calendar.DECEMBER, 15);
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2082, CalendarBS.MANGSHIR, 29) });
+
+    calendar.set(2025, Calendar.DECEMBER, 16);
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2082, CalendarBS.POUSH, 1) });
+
+    calendar.set(2026, Calendar.JANUARY, 14);
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2082, CalendarBS.POUSH, 30) });
+
+    calendar.set(2026, Calendar.JANUARY, 15);
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2082, CalendarBS.MAGH, 1) });
+
+    calendar.set(2026, Calendar.FEBRUARY, 12);
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2082, CalendarBS.MAGH, 29) });
+
+    calendar.set(2026, Calendar.FEBRUARY, 13);
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2082, CalendarBS.FALGUN, 1) });
+
+    calendar.set(2026, Calendar.MARCH, 14);
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2082, CalendarBS.FALGUN, 30) });
+
+    calendar.set(2026, Calendar.MARCH, 15);
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2082, CalendarBS.CHAITRA, 1) });
+
+    calendar.set(2026, Calendar.APRIL, 13);
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2082, CalendarBS.CHAITRA, 30) });
 
     calendar.set(2041, Calendar.SEPTEMBER, 14);
-    objects[14] = new Object[] { calendar.getTime(), new DateBS(2098, CalendarBS.BHADRA, 29) };
+    testCases.add(new Object[] { calendar.getTime(), new DateBS(2098, CalendarBS.BHADRA, 29) });
 
-    return objects;
+    return testCases.toArray();
   }
 
   @Test
