@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.bishnu-subedi</groupId>
-    <artifactId>BS-date-converter</artifactId>
-    <version>1.0.2</version>
+    <artifactId>bs-date-converter</artifactId>
+    <version>1.0.3</version>
     <packaging>jar</packaging>
 
     <name>BS-date-converter</name>
